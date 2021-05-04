@@ -26,5 +26,4 @@ Button.defaultProps = {
   onClick: () => null,
   disabled: false,
   variant: 'basic',
-  outline: 'border',
 };
