@@ -1,12 +1,12 @@
 import { useToast } from '../contexts/toast';
 
-import { Layout, Input, Button } from '../components';
+import { Input, Button } from '../components';
 
-const Home = () => {
+function Dashboard() {
   const { addToast } = useToast();
 
   return (
-    <Layout>
+    <>
       <Input name="teste" type="password" />
 
       <Button
@@ -25,7 +25,7 @@ const Home = () => {
       </Button>
 
       <Button size="small" variant="basic" style={{ marginTop: '32px' }}>
-        Button medium
+        Button small
       </Button>
 
       <Button size="medium" variant="basic" style={{ marginTop: '32px' }}>
@@ -51,8 +51,8 @@ const Home = () => {
       <Button size="small" variant="link">
         Link
       </Button>
-    </Layout>
+    </>
   );
-};
+}
 
-export default Home;
+export default Dashboard;
