@@ -7,13 +7,14 @@ import './styles.scss';
 type MenuEntryProps = {
   title: string;
   icon: IconType;
+  path: string;
 };
 
-const MenuEntry = ({ title, icon: Icon }: MenuEntryProps) => {
+const MenuEntry = ({ title, icon: Icon, path }: MenuEntryProps) => {
   return (
     <div className="list__item">
       <NavLink
-        to="/dashboard"
+        to={path}
         exact
         activeClassName="active"
         className="list__item-link"

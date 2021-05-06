@@ -1,8 +1,7 @@
 .list__item {
-  margin: 16px 0;
-  padding: 8px;
-
-  border-radius: 4px;
+  margin-bottom: 16px;
+  padding: 8px 0 8px 40px;
+  position: relative;
 
   &-link {
     display: flex;
@@ -22,6 +21,15 @@
     > svg {
       color: #eb7129;
       fill: #eb7129;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      height: 100%;
+      width: 4px;
+      background: #eb7129;
     }
   }
 }
