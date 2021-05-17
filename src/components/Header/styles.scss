@@ -1,0 +1,53 @@
+.container-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 288px;
+
+  height: 70px;
+  padding: 0 24px;
+
+  background: var(--primary-dark);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  z-index: 1;
+
+  .badge-header {
+    margin-right: 16px;
+    font-size: 16px;
+    line-height: 1.6;
+
+    display: flex;
+    align-items: center;
+
+    > svg {
+      margin-right: 4px;
+    }
+  }
+
+  .profile {
+    width: auto;
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid var(--primary-orange);
+    background: var(--primary-orange);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > img {
+      width: 45px;
+      height: 45px;
+      border-radius: inherit;
+
+      flex-shrink: 0;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    left: 0;
+  }
+}
