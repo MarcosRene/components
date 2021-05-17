@@ -1,4 +1,5 @@
 import { useEffect, PropsWithChildren } from 'react';
+import cx from 'classnames';
 import { motion } from 'framer-motion';
 
 import {
@@ -11,7 +12,7 @@ import {
 import { useToast } from '../../../contexts/toast';
 import { ToastProps } from '../../../contexts/toast/types';
 
-import './styles.scss';
+import styles from './styles.module.scss';
 
 type ToastMessages = {
   message: ToastProps;
@@ -29,19 +30,16 @@ const Toast = (props: PropsWithChildren<ToastMessages>) => {
   const { removeToast } = useToast();
 
   useEffect(() => {
-    const timer = setTimeout(() => removeToast(id), 4000);
+    const timer = setTimeout(() => removeToast(id), 3800);
 
     return () => clearTimeout(timer);
   }, [removeToast, id]);
 
+  const _className = cx(styles.toast, styles[type]);
+
   return (
     <motion.div
-      className="toast"
-      style={{
-        ...((type === 'error' && { background: '#F83C31' }) ||
-          (type === 'success' && { background: '#5CD85A' }) ||
-          (type === 'info' && { background: '#2E8BC0' })),
-      }}
+      className={_className}
       key={id}
       layout="position"
       initial={{ x: 364, opacity: 0 }}
@@ -53,7 +51,7 @@ const Toast = (props: PropsWithChildren<ToastMessages>) => {
       }}
       transition={{ type: 'spring', duration: 0.6 }}
     >
-      {icons[type || 'info']}
+      {icons[type]}
       <div>
         <strong>{title}</strong>
         <p>{description}</p>
@@ -63,6 +61,10 @@ const Toast = (props: PropsWithChildren<ToastMessages>) => {
       </button>
     </motion.div>
   );
+};
+
+Toast.defaultProps = {
+  type: 'info',
 };
 
 export default Toast;
