@@ -1,4 +1,5 @@
 import { PropsWithChildren } from 'react';
+import Header from '../Header';
 
 import Sidebar from '../Sidebar';
 
@@ -8,7 +9,10 @@ export const Layout = ({ children }: PropsWithChildren<any>) => {
   return (
     <div className="container">
       <Sidebar />
-      <main>{children}</main>
+      <main>
+        <Header />
+        {children}
+      </main>
     </div>
   );
 };
