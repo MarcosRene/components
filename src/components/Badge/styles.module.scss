@@ -1,0 +1,52 @@
+// Borders
+.badge,
+.rounded-semi {
+  padding: 4px;
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 1;
+  border: 0;
+  border-radius: 4px;
+
+  background: var(--primary-orange);
+  color: var(--white);
+
+  vertical-align: middle;
+  text-align: center;
+
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.rounded-pill {
+  padding: 4px 16px;
+  line-height: 1.2;
+  font-size: 14px;
+  border-radius: 24px;
+}
+
+// Types
+.success,
+.error,
+.warning,
+.dark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success {
+  background: #1da51a;
+}
+
+.error {
+  background: #d83027;
+}
+
+.warning {
+  background: #f6e205;
+}
+
+.dark {
+  background: #202123;
+}
