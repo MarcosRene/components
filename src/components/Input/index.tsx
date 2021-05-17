@@ -8,6 +8,7 @@ type InputProps = InputHTMLAttributes<HTMLInputElement> & {};
 
 export const Input = (props: PropsWithChildren<InputProps>) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
 
   const { id, name, type, placeholder, onChange, ...rest } = props;
 
@@ -16,11 +17,25 @@ export const Input = (props: PropsWithChildren<InputProps>) => {
   const handlePasswordVisible = () =>
     setIsPasswordVisible((prevState) => !prevState);
 
+  const handleFocused = (event: any) => {
+    if (event.currentTarget === event.target) {
+      setIsFocused(true);
+    }
+  };
+
+  const handleBlur = (event: any) => {
+    if (event.currentTarget === event.target) {
+      setIsFocused(false);
+    }
+  };
+
   return (
     <div className="input-container" id={inputId}>
       <input
         id={inputId}
         name={name}
+        onFocus={(event) => handleFocused(event.target)}
+        onBlur={(event) => handleBlur(event.target)}
         type={isPasswordVisible ? 'text' : type}
         onChange={onChange}
         placeholder={placeholder}
@@ -30,9 +45,9 @@ export const Input = (props: PropsWithChildren<InputProps>) => {
       {type === 'password' && (
         <span onClick={handlePasswordVisible}>
           {isPasswordVisible ? (
-            <FiEyeOff color="#202123" />
+            <FiEyeOff color={isFocused ? '#ea7129' : '#202123'} />
           ) : (
-            <FiEye color="#202123" />
+            <FiEye color={isFocused ? '#ea7129' : '#202123'} />
           )}
         </span>
       )}

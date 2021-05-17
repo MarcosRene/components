@@ -4,14 +4,14 @@
   border: 2px solid #202123;
 
   vertical-align: middle;
-  line-height: 16px;
+  line-height: 1;
 
   display: flex;
   align-items: center;
 
   border-radius: 4px;
 
-  transition: border 180ms ease-in-out;
+  transition: border 180ms, outline 180ms, 180ms ease-in-out;
 
   > input {
     font-weight: 500;
@@ -27,9 +27,13 @@
 
   > span {
     margin-left: 4px;
+
+    > svg {
+      transition: color 180ms ease-in-out;
+    }
   }
 
   &:focus-within {
-    border: 2px solid orange;
+    border: 2px solid var(--primary-orange);
   }
 }
