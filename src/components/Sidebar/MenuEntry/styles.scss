@@ -1,5 +1,5 @@
 .list__item {
-  margin-bottom: 16px;
+  margin-bottom: 4px;
   padding: 8px 0 8px 40px;
   position: relative;
 
@@ -19,8 +19,8 @@
   .active {
     > span,
     > svg {
-      color: #eb7129;
-      fill: #eb7129;
+      color: var(--primary-orange);
+      fill: var(--primary-orange);
     }
 
     &::before {
@@ -29,7 +29,7 @@
       right: 0;
       height: 100%;
       width: 4px;
-      background: #eb7129;
+      background: var(--primary-orange);
     }
   }
 }
