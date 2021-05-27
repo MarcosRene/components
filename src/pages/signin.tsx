@@ -9,7 +9,7 @@ function SignIn() {
         defaultValue="email@email.com"
       />
       <Input
-        name="email"
+        name="password"
         type="password"
         placeholder="Enter a password"
         defaultValue="12345678"

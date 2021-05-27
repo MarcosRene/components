@@ -1,6 +1,5 @@
 export { Alert } from './Alert';
 export { Button } from './Button';
-export { ButtonDropdown } from './ButtonDropdown';
 export { Badge } from './Badge';
 export { CardsGrid } from './CardsGrid';
 export { Input } from './Input';

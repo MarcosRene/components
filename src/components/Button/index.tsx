@@ -34,23 +34,20 @@ export const Button = (props: PropsWithChildren<ButtonProps>) => {
     }
   }, [children]);
 
-  const _className = cx(
-    styles.btn,
-    styles[variant],
-    styles[size],
-    `${isLoading}` ? { width, height } : {}
-  );
+  const _className = cx(styles.btn, styles[variant], styles[size]);
 
   return (
     <button
-      {...rest}
       ref={refButton}
       className={_className}
+      {...rest}
       style={
         isLoading
           ? {
               width,
               height,
+              opacity: '0.8',
+              cursor: 'not-allowed',
             }
           : {}
       }
