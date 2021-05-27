@@ -9,4 +9,8 @@ export const GENERAL_PROFILE = {
     path: '/',
     icon: RiLogoutBoxRLine,
   },
+  Teste: {
+    path: '/',
+    icon: RiLogoutBoxRLine,
+  },
 };

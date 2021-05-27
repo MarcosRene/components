@@ -10,14 +10,26 @@
     0px 1px 2px 0px rgba(0, 0, 0, 0.06);
   border-radius: 4px;
 
-  &::before {
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   top: -8%;
+  //   right: 3%;
+  //   border-bottom: 8px solid var(--primary-orange);
+  //   border-left: 8px solid transparent;
+  //   border-right: 8px solid transparent;
+  // }
+
+  &::after {
     content: '';
     position: absolute;
-    top: -8%;
-    right: 4%;
-    border-bottom: 8px solid var(--white);
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: var(--primary-orange);
+    border-radius: 4px 4px 0 0;
   }
 
   .dropdowncard-content {

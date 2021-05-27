@@ -20,7 +20,7 @@ export const DropDownCard = () => {
       className="dropdowncard"
     >
       {Object.entries(GENERAL_PROFILE).map(([title, { path, icon: Icon }]) => (
-        <div className="dropdowncard-content">
+        <div key={title} className="dropdowncard-content">
           <Link to={path}>
             <span>{title}</span>
             <Icon size={20} />
